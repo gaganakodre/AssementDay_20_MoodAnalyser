@@ -21,12 +21,21 @@ namespace AssesmentMoodAnalyser
         }
         public string AnalyseMood()
         {
-           
+
+            try
+            {
                 if (message.ToLower().Contains("sad"))
                     return "SAD";
                 
+
                 else return "HAPPY";
-            
+            }
+            catch (NullReferenceException)
+            {
+                
+                return "HAPPY";
+            }
+
 
         }
         public string AnalyseMoodWithoutConstructor(string message)
