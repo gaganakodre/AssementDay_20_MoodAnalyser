@@ -12,6 +12,7 @@ namespace AssesmentMoodAnalyser
         {
             EMPTY_MOOD,
             NULL_MOOD,
+            
 
         }
         public ExceptionType exceptionType;

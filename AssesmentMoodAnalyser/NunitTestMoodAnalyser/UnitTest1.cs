@@ -11,7 +11,8 @@ namespace AssesmentMoodAnalyser
         /// <summary>
         /// TC1.1 Given “I am in Sad Mood” message Should Return SAD
         /// </summary>
-        [Test]
+        [Test]//this is a attribute makes the method as callable from the nutnit test runner 
+        //this will be frim the attribute class
         public void GivenMessage_WhenSad_ShouldReturnSadParameterLess_Constructor()
         {
             //Arrange
@@ -20,7 +21,8 @@ namespace AssesmentMoodAnalyser
             //Act
             string message = moodAnalyser.AnalyseMoodWithoutConstructor(msg);
             //Assert
-            Assert.AreEqual("SAD", message);
+            Assert.AreEqual("SAD", message);//it is a statice class it test a condition which we have specified
+            //are equal is a static and void method 
         }
         /// <summary>
         /// TC1.2 Given “I am in Any Mood” message Should Return HAPPY
@@ -31,7 +33,7 @@ namespace AssesmentMoodAnalyser
             moodAnalyser = new MoodAnalyser();
             string msg = "I am in Any mood";
             string message = moodAnalyser.AnalyseMoodWithoutConstructor(msg);
-            Assert.AreEqual("HAPPY", message);
+            Assert.AreEqual("HAPPY", message);//assert class 
         }
         // <summary>
         /// repeat TC1.1 Given “I am in SAD Mood” message in Constructor Should Return SAD
@@ -76,7 +78,7 @@ namespace AssesmentMoodAnalyser
         [Test]
         public void GivenMessage_WhenEmpty_USingCustomException_ShouldReturnNullMood()
         {
-            moodAnalyser = new MoodAnalyser("");
+            moodAnalyser = new MoodAnalyser("");//jere we are passing empty it will trow thw exception
             try
             {
                 string message = moodAnalyser.AnalyseMood();
@@ -86,6 +88,7 @@ namespace AssesmentMoodAnalyser
                 Assert.AreEqual(MoodAnalyserException.ExceptionType.EMPTY_MOOD, exception.exceptionType);
             }
         }
+        
 
 
     }
